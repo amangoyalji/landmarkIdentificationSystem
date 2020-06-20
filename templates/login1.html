@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+<html>
+  <head>
+    <title>Video Streaming Demonstration</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('input[type=file]').change(function (event) {
+          var tmppath = URL.createObjectURL(event.target.files[0]);
+          $("img").fadeIn("fast").attr('src',tmppath);      
+           });
+});
+    </script>
+  </head>
+  <body>
+    <div style="margin-top: 50px;">
+      <div style="text-align: center;">
+      <h1>Video Streaming Demonstration</h1>
+       <form action="/camera_image" method="post" enctype="multipart/form-data">
+         <input type="file" name="image" accept="image/*">
+         <input type="submit" name="submit">
+       </form>
+     </div>
+     <div class="row">
+      <div class="col-lg-6">
+     <div style="width: 500px;height:500px;">
+       <img src="" id="temp" width="600" height="500" >
+     </div>
+     <div>{{data}}</div>
+     </div>
+     {% if data %}
+     <div class="col-lg-6">
+       <h3>lognitude {{data.log}}</h3>
+       <h3>latitude  {{data.lat}}</h3>
+     </div>
+     {% endif %}
+    </div>
+  </div>
+  </body>
+</html>
+
+
+
+
+
+  <!-- Contact Form JavaScript -->
+  <script src="static/js/jqBootstrapValidation.js"></script>
+  <script src="static/js/contact_me.js"></script>
+
+
+{% endblock %}

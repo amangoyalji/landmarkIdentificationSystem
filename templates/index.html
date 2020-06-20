@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block body %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('static/img/download.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>My Research</h1>
+            <span class="subheading">  Landmark Recognition </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<div class="container" style="margin-top:30px">
+  <h2>Let Me introduce Myself</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="{{ url_for('static', filename='img/myimage.jpg') }}" width="300" height="400">
+    </div>
+    <div class="col-sm-6">
+      <h2>Name : Aman Agrawal</h2>
+      <h2>Age : 22 years</h2>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

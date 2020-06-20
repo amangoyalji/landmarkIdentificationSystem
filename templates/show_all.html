@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+
+
+      <table>
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>City</th>
+               <th>Address</th>
+
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for user in users %}
+               <tr>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.password }}</td>
+
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+</html>
